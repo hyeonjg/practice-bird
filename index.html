@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>bird</title>
+	<style>
+		body{background-image: url('bg.jpg'); background-size: cover}
+		p{display: inline-block; margin: auto; color: #28372f;}
+
+		.wrap{text-align: center;}
+
+		#cage{
+			height:300px; position: absolute;
+			top: 35vh; left: 42vw;}
+
+		#bird1{
+			height:100px; position: absolute;
+			top: 35vh; left: 350px; display: none;
+			}
+		#bird2{
+			height:100px; position: absolute;
+			top: 35vh; left: 640px; display: none;
+			} 
+		#bird3{
+			height:100px; position: absolute;
+			top: 35vh; left: 950px; display: none;
+			}
+
+	</style>
+</head>
+<body>
+
+	<img src='cage.png' id='cage'>
+
+	<img src='bird.gif' id='bird1'>
+	<img src='bird.gif' id='bird2'>
+	<img src='bird.gif' id='bird3'>
+
+	<div class='wrap'>
+		<p>구현정 만듦 hyeonjg@g.seoultech.ac.kr</p>
+	</div>
+
+
+	<script>
+
+		cageopen = false;
+
+		cage.onclick = function(){
+			if (cageopen == false) {
+				cageopen = true;
+				bird1.style.display = 'block';
+				bird2.style.display = 'block';
+				bird3.style.display = 'block';
+			}
+			else if (cageopen == true) {
+				cageopen = false;
+				bird1.style.display = 'none';
+				bird2.style.display = 'none';
+				bird3.style.display = 'none';
+			}
+		}
+
+
+		bird1.onmouseover = function(){
+			ranPosition(bird1);
+		}
+		bird2.onmouseover = function(){
+			ranPosition(bird2);
+		}
+		bird3.onmouseover = function(){
+			ranPosition(bird3);
+		}
+
+		function ranPosition(obj){
+			topPX = Math.random()*600
+			obj.style.top = topPX+'px'
+			leftPX = Math.random()*1200
+			obj.style.left = leftPX+'px'
+
+		}
+
+	</script>
+
+</body>
+</html>
